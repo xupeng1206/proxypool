@@ -127,6 +127,7 @@ class Run(object):
 
     @staticmethod
     def check():
+        global CHECK_INTERVAL
         check_util = CheckUtil()
         while True:
             check_util.check_event()
