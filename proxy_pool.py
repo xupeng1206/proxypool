@@ -35,12 +35,13 @@ class CheckUtil(object):
         self.url = CHECK_URL
 
     def check(self, proxy):
+        global HEADERS
         proxies = {
             'http': proxy
         }
         print('check', proxy)
         try:
-            ret = requests.get(self.url, proxies=proxies)
+            ret = requests.get(self.url, proxies=proxies,headers = HEADERS)
             return ret.status_code == 200
         except Exception as e:
             return False
