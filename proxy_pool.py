@@ -21,7 +21,7 @@ CHECK_INTERVAL = 300  # s
 
 
 _db = redis.Redis(
-    host='192.168.1.20',
+    host='127.0.0.1',
     port=6379,
     db=1,
     decode_responses=True,
