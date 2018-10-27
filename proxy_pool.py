@@ -16,7 +16,7 @@ HEADERS = {
 
 CHECK_URL = 'https://www.baidu.com'
 REDIS_KEY = 'proxy_pool'
-MAX_PROXT_NUM = 50
+MAX_PROXY_NUM = 50
 CHECK_INTERVAL = 300  # s
 
 
@@ -107,8 +107,8 @@ class ProxyAdd(object):
         self.check_util = CheckUtil()
 
     def is_enough(self):
-        global _db, MAX_PROXT_NUM, REDIS_KEY
-        return _db.scard(REDIS_KEY) == MAX_PROXT_NUM
+        global _db, MAX_PROXY_NUM, REDIS_KEY
+        return _db.scard(REDIS_KEY) == MAX_PROXY_NUM
 
     def put(self):
         global CHECK_URL, _db
