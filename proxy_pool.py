@@ -68,10 +68,9 @@ class ProxyGet(object):
             return doc
 
     def get_proxys(self):
-        for x in dir(self):
-            if x.startswith('proxy_'):
-                for proxy in getattr(self, x)():
-                    yield proxy
+        proxy_method_list = [x for x in dir(self) if x.startswith('proxy_')]
+        for proxy in getattr(self, random.sample(proxy_method_list, 1)[0])():
+            yield proxy
 
     def proxy_xicidaili(self):
         for page_num in range(10):
