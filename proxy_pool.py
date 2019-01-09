@@ -138,7 +138,7 @@ class Run(object):
         while True:
             proxyadd.put()
             while proxyadd.is_enough():
-                time.sleep(1)
+                time.sleep(0.2)
 
     def main(self):
         add_process = multiprocessing.Process(target=Run.add)
